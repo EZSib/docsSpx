@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Руководство &mdash; документация galary beta</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="Welcome to galary’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            galary
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Руководство</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">galary</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Руководство</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/buttons.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>Руководство<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<p>Главное меню интуитивно понятно:</p>
+<p class="rubric">Управление</p>
+<figure class="align-center" id="id3">
+<img alt="_images/main.png" src="_images/main.png" />
+<figcaption>
+<p><span class="caption-text">Клавиши управления процессом</span><a class="headerlink" href="#id3" title="Постоянная ссылка на рисунок"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Приложение открывается и считывает имена всех png в директории затем открывается  на случайной png картинке</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span> <span class="n">galery</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.png&#39;</span><span class="p">)]</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><p>Нажатие клавиши вперед вызывает функцию next_rave():</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="k">def</span> <span class="nf">next_rave</span><span class="p">():</span>
+<span class="linenos">2</span>     <span class="k">global</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">root</span>
+<span class="linenos">3</span>     <span class="n">alpha</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">4</span>     <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+<span class="linenos">5</span>     <span class="n">galery</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.png&#39;</span><span class="p">)]</span>
+<span class="linenos">6</span>     <span class="n">forward</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">galery</span><span class="p">)</span>
+<span class="hll"><span class="linenos">7</span>     <span class="n">result_iter_galery</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">forward</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">8</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">9</span>         <span class="n">result_iter_galery</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">forward</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><p>Нажатие клавиши назад вызывает функцию prev_rave():</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="k">def</span> <span class="nf">prev_rave</span><span class="p">():</span>
+<span class="linenos">2</span>     <span class="k">global</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">root</span>
+<span class="linenos">3</span>     <span class="n">alpha</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">4</span>     <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+<span class="linenos">5</span>     <span class="n">galery</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.png&#39;</span><span class="p">)]</span>
+<span class="hll"><span class="linenos">6</span>     <span class="n">forward</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">galery</span><span class="p">))</span>
+</span><span class="hll"><span class="linenos">7</span>     <span class="n">result_iter_galery</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">forward</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">8</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos">9</span>         <span class="n">result_iter_galery</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">forward</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Функции next_rave() и prev_rave() закрывают основную функцию меняют переменную-счетчик и
+вызывают точно такую же функцию с новым значением переменной, отвечающую за порядковый номер
+картинки в списке, которая отобразится.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Предупреждение</p>
+<p>В поведении функции «назад» и «вперед» существует баг <img alt="trol" src="_images/ico.png" /> Нашел способ, как его исправить, но для этого
+придется ввести 2 дополнительные глобальные переменные. Если есть другие идеи, делитесь ими <a class="reference external" href="https://github.com/EZSib/LH_homework/blob/main/LH_homework_12/LH_homework_12_3.py/">здесь</a></p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to galary’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Efim.</p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
